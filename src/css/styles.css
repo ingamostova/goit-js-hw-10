@@ -18,3 +18,23 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+ul {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+img {
+  display: inline-block;
+}
+
+span {
+  font-weight: bold;
+}

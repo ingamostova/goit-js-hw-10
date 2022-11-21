@@ -2,7 +2,7 @@ import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
 import { Notify } from 'notiflix';
-// console.log(debounce);
+
 const DEBOUNCE_DELAY = 300;
 
 const refs = {
@@ -33,7 +33,7 @@ function createMarkup(arr) {
     const markup = arr
       .map(
         item => `<li>
-        <img src="${item.flags.svg}" alt="" width="50">
+        <img src="${item.flags.svg}" alt="" width="25">
         <h2>${item.name.common}</h2>
       </li>`
       )
@@ -44,13 +44,13 @@ function createMarkup(arr) {
   } else if (arr.length === 1) {
     const markup = arr
       .map(
-        item => `<li>
-        <img src="${item.flags.svg}" alt="" width="50">
-        <h2>${item.name.common}</h2>
-        <p>Capital: ${item.capital}</p>
-      <p>Population: ${item.population}</p>
-      <p>Languages: ${Object.values(item.languages)}</p>
-      </li>`
+        item => `
+        <img src="${item.flags.svg}" alt="" width="35">
+        <h1>${item.name.common}</h1>
+        <p><span>Capital:</span> ${item.capital}</p>
+      <p><span>Population:</span> ${item.population}</p>
+      <p><span>Languages:</span> ${Object.values(item.languages)}</p>
+      `
       )
       .join('');
     refs.div.innerHTML = markup;
